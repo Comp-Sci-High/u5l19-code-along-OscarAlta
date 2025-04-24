@@ -68,7 +68,10 @@ app.post("/add/teacher", async (req, res) => {
 });
 
 // Create a dynamic delete route to remove a teacher by their ID
-
+app.delete("/delete/:_id", async (req, res) => {
+  const response = await Teacher.findByIdAndDelete({_id: req.params.id})
+  res.json(response)
+})
 
 
  
